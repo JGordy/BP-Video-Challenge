@@ -29,7 +29,12 @@ export const App = () => {
     const onVideoCardClick = (youtubeId) => {
         const activeVideoDetails = videos.find((video) => video.youtubeId === youtubeId);
         setActiveVideo(activeVideoDetails);
+
+        // Scroll back to the top where the video starts to play
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    const showVideoPlayer = activeVideo?.youtubeId;
 
     return (
         <main>
@@ -40,7 +45,14 @@ export const App = () => {
                 </div>
                 <div id="hero-content">
                     {videoCategory && <CategoryContainer {...videoCategory} />}
-                    {activeVideo?.youtubeId && <YoutubePlayer {...activeVideo} />}
+                    <div className="right-column-container">
+                        {showVideoPlayer && <YoutubePlayer {...activeVideo} />}
+                        {(!showVideoPlayer && videoCategory?.images) && (
+                            <img
+                                src={videoCategory.images.medium}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
             <div id="video-list-container">
