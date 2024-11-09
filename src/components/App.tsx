@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import ThemeProvider from '../context/ThemeContext';
+
+import ThemeToggle from './ThemeToggle';
 import CategoryContainer from './CategoryContainer';
 import YoutubePlayer from './YoutubePlayer';
 import VideoCard from './VideoCard';
@@ -37,33 +40,35 @@ export const App = () => {
     const showVideoPlayer = activeVideo?.youtubeId;
 
     return (
-        <main>
-            <div className="hero-container">
-                <div id="header">
-                    <div id="logo">BibleProject</div>
-                    <div>Theme Toggle (Coming Soon)</div>
-                </div>
-                <div id="hero-content">
-                    {videoCategory && <CategoryContainer {...videoCategory} />}
-                    <div className="right-column-container">
-                        {showVideoPlayer && <YoutubePlayer {...activeVideo} />}
-                        {(!showVideoPlayer && videoCategory?.images) && (
-                            <img
-                                src={videoCategory.images.medium}
-                            />
-                        )}
+        <ThemeProvider>
+            <main>
+                <div className="hero-container">
+                    <div id="header">
+                        <div id="logo">BibleProject</div>
+                        <ThemeToggle />
+                    </div>
+                    <div id="hero-content">
+                        {videoCategory && <CategoryContainer {...videoCategory} />}
+                        <div className="right-column-container">
+                            {showVideoPlayer && <YoutubePlayer {...activeVideo} />}
+                            {(!showVideoPlayer && videoCategory?.images) && (
+                                <img
+                                    src={videoCategory.images.medium}
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="video-list-container">
-                {videos?.map((video) => (
-                    <VideoCard
-                        key={video.id}
-                        onVideoCardClick={onVideoCardClick}
-                        {...video}
-                    />
-                ))}
-            </div>
-        </main>
+                <div id="video-list-container">
+                    {videos?.map((video) => (
+                        <VideoCard
+                            key={video.id}
+                            onVideoCardClick={onVideoCardClick}
+                            {...video}
+                        />
+                    ))}
+                </div>
+            </main>
+        </ThemeProvider>
     );
 };
