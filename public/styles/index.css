@@ -1,1 +1,75 @@
+:root {
+    --main-border-radius: 5px;
+    --container-padding: 20px 50px;
+    --primary-background-color: #fff;
+}
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-background-color: #1e1e35;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.hero-container {
+    color: #fff;
+    background:
+        radial-gradient(at top center,
+            #1C2E60 25%,
+            transparent 100%),
+        radial-gradient(circle at top right,
+            #F9B5EF 15%,
+            transparent 45%),
+        radial-gradient(circle at bottom left,
+            #57212E 35%,
+            transparent 80%),
+        radial-gradient(circle at bottom right,
+            #FB63D9 25%,
+            transparent 50%);
+    border-bottom: 5px solid #FB4CFF;
+    padding: var(--container-padding);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.category-details {
+    flex-basis: 40%;
+    margin-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    /* #logo {
+        margin: 20px 50px;
+    } */
+
+    >h1 {
+        font-size: 1.5em;
+    }
+
+    >hr {
+        margin-left: 0;
+        text-align: left;
+        width: 25px;
+    }
+
+    & p {
+        font-size: smaller;
+    }
+}

@@ -23,9 +23,14 @@ export const App = () => {
 
     return (
         <main>
-            <h1>BibleProject</h1>
             <div className="hero-container">
-                {videoCategory && <CategoryContainer videoCategory={videoCategory} />}
+                <div id="logo">BibleProject</div>
+                <div id="hero-content">
+                    {videoCategory && <CategoryContainer videoCategory={videoCategory} />}
+                    <div>
+                        VideoPlayer stub
+                    </div>
+                </div>
             </div>
         </main>
     );
