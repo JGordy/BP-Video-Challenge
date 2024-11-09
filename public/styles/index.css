@@ -1,12 +1,18 @@
 :root {
-    --main-border-radius: 5px;
+    --main-border-radius: 8px;
     --container-padding: 20px 50px;
     --primary-background-color: #fff;
+    --primary-text-color: #000;
+    --secondary-text-color: #575656fe;
+    --video-card-background: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-background-color: #1e1e35;
+        --primary-background-color: #15202b;
+        --primary-text-color: #fff;
+        --secondary-text-color: #b3b3b3;
+        --video-card-background: #22303C;
     }
 }
 
@@ -18,6 +24,15 @@ body {
 
 main {
     min-height: 100vh;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+}
+
+.truncate {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hero-container {
@@ -79,7 +94,42 @@ main {
 }
 
 .video-card {
-    min-width: 200px;
-    border: 1px solid grey;
+    border-radius: var(--main-border-radius);
+    background-color: var(--video-card-background);
+    cursor: pointer;
+    width: 200px;
     margin: 0px 5px 20px;
+
+    & img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: var(--main-border-radius);
+    }
+
+    .video-card-body {
+        padding: 0 5px;
+
+        .video-title {
+            font-size: small;
+            margin: 5px 0;
+        }
+
+        .video-description {
+            color: var(--secondary-text-color);
+            font-size: x-small;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+        }
+    }
+
+    .video-card-footer {
+        padding: 0 5px;
+
+        .video-duration {
+            font-size: xx-small;
+        }
+    }
 }
