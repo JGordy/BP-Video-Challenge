@@ -70,3 +70,16 @@ main {
         font-size: 0.75em;
     }
 }
+
+#video-list-container {
+    margin-top: 50px;
+    padding: var(--container-padding);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    min-width: 200px;
+    border: 1px solid grey;
+    margin: 0px 5px 20px;
+}

@@ -8,7 +8,7 @@ const VideoCard = ({
     youtubeId,
 }) => {
     return (
-        <div>
+        <div className="video-card">
             <h5>{title}</h5>
             <p>{subtitle}</p>
         </div>
