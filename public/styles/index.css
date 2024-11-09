@@ -52,9 +52,13 @@ main {
             transparent 50%);
     border-bottom: 5px solid #FB4CFF;
     padding: var(--container-padding);
-    min-height: 60vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+#header {
+    display: flex;
     justify-content: space-between;
 }
 
@@ -63,6 +67,7 @@ main {
     flex: 1;
     justify-content: space-between;
     align-items: center;
+    padding: 50px 0;
 }
 
 .category-details {
@@ -83,6 +88,15 @@ main {
 
     & p {
         font-size: 0.75em;
+    }
+}
+
+.video-responsive {
+    text-align: center;
+    flex-grow: 1;
+
+    iframe {
+        border-radius: var(--main-border-radius);
     }
 }
 

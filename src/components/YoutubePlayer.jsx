@@ -16,7 +16,7 @@ const YoutubePlayer = ({ youtubeId, title }) => {
                 src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
                 frameborder="0"
                 title={title}
-                allowfullscreen
+                allowFullScreen
             />
         </div>
     );
