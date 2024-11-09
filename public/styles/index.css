@@ -40,13 +40,14 @@ main {
     min-height: 60vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 #hero-content {
     display: flex;
+    flex: 1;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
 }
 
 .category-details {
@@ -54,10 +55,6 @@ main {
     margin-right: 20px;
     padding-top: 50px;
     padding-bottom: 50px;
-
-    /* #logo {
-        margin: 20px 50px;
-    } */
 
     >h1 {
         font-size: 1.5em;
@@ -70,6 +67,6 @@ main {
     }
 
     & p {
-        font-size: smaller;
+        font-size: 0.75em;
     }
 }
