@@ -1,5 +1,4 @@
-export const CategoryContainer = ({ videoCategory }) => {
-    const { title, description } = videoCategory;
+const CategoryContainer = ({ title, description }) => {
 
     return (
         <div className="category-details">
@@ -9,3 +8,5 @@ export const CategoryContainer = ({ videoCategory }) => {
         </div>
     )
 };
+
+export default CategoryContainer;
