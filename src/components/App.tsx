@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { CategoryContainer } from './CategoryContainer';
+
 export const App = () => {
 
     const [seriesDetails, setSeriesDetails] = useState({});
@@ -22,6 +24,9 @@ export const App = () => {
     return (
         <main>
             <h1>BibleProject</h1>
+            <div className="hero-container">
+                {videoCategory && <CategoryContainer videoCategory={videoCategory} />}
+            </div>
         </main>
     );
 };
