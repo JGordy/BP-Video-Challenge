@@ -20,7 +20,7 @@
     --primary-background-color: #fff;
     --primary-text-color: #000;
     --secondary-text-color: #575656fe;
-    --video-card-background: inherit;
+    --video-card-background: #fff;
 }
 
 .theme-dark {
@@ -40,7 +40,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0px;
     margin: 0px;
-    transition: background .5s ease, color .5s ease;
+    transition: background-color .5s ease, color .5s ease;
 }
 
 main {

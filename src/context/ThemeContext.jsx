@@ -14,6 +14,9 @@ const ThemeProvider = ({ children }) => {
     useEffect(() => {
         if (preferesDark.matches) {
             setDarkMode(true);
+            document.body.classList.add('theme-dark');
+        } else {
+            document.body.classList.add('theme-light');
         }
 
         // This callback will fire if the perferred color scheme changes without a reload
