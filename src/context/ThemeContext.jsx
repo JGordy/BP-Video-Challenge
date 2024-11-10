@@ -24,7 +24,6 @@ const ThemeProvider = ({ children }) => {
     }, []);
 
     const toggle = () => {
-        console.log('Toggle Method Called');
         const oldClass = darkMode ? 'theme-dark' : 'theme-light';
         const newClass = darkMode ? 'theme-light' : 'theme-dark';
 
