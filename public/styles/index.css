@@ -63,6 +63,7 @@ main {
 }
 
 .hero-container {
+    margin: auto;
     color: var(--white);
     background:
         radial-gradient(at top center,
@@ -87,6 +88,10 @@ main {
 #header {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        margin: 20px 0;
+    }
 }
 
 #hero-content {
