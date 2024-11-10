@@ -1,33 +1,38 @@
 :root {
     --main-border-radius: 8px;
     --container-padding: 20px 50px;
-    --primary-background-color: #fff;
-    --primary-text-color: #000;
+    --white: #fff;
+    --black: #000;
+    --background-color: var(--white);
+    --text-color: var(--black);
+    --dark-mode-bg-color: #15202b;
+    --dark-mode-secondary-bg-color: #22303C;
     --secondary-text-color: #575656fe;
+    --dark-secondary-text-color: #b3b3b3;
     --video-card-background: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary-background-color: #15202b;
-        --primary-text-color: #fff;
-        --secondary-text-color: #b3b3b3;
-        --video-card-background: #22303C;
+        --background-color: var(--dark-mode-bg-color);
+        --text-color: var(--white);
+        --secondary-text-color: var(--dark-secondary-text-color);
+        --video-card-background: var(--dark-mode-secondary-bg-color);
     }
 }
 
 .theme-light {
-    --primary-background-color: #fff;
-    --primary-text-color: #000;
+    --background-color: var(--white);
+    --text-color: var(--black);
     --secondary-text-color: #575656fe;
-    --video-card-background: #fff;
+    --video-card-background: var(--white);
 }
 
 .theme-dark {
-    --primary-background-color: #15202b;
-    --primary-text-color: #fff;
-    --secondary-text-color: #b3b3b3;
-    --video-card-background: #22303C;
+    --background-color: var(--dark-mode-bg-color);
+    --text-color: var(--white);
+    --secondary-text-color: var(--dark-secondary-text-color);
+    --video-card-background: var(--dark-mode-secondary-bg-color);
 }
 
 @media (width < 768px) {
@@ -40,13 +45,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0px;
     margin: 0px;
-    transition: background-color .5s ease, color .5s ease;
+    transition: background-color 1.5s ease, color 1.5s ease;
 }
 
 main {
     min-height: 100vh;
-    background-color: var(--primary-background-color);
-    color: var(--primary-text-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .truncate {
@@ -57,7 +62,7 @@ main {
 }
 
 .hero-container {
-    color: #fff;
+    color: var(--white);
     background:
         radial-gradient(at top center,
             #1C2E60 25%,
