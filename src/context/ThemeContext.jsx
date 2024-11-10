@@ -28,8 +28,6 @@ const ThemeProvider = ({ children }) => {
         const oldClass = darkMode ? 'theme-dark' : 'theme-light';
         const newClass = darkMode ? 'theme-light' : 'theme-dark';
 
-        console.log({ oldClass, newClass });
-
         document.body.classList.replace(oldClass, newClass);
 
         setDarkMode(darkMode => !darkMode);
