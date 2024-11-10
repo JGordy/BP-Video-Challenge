@@ -67,10 +67,12 @@ export const App = () => {
         <ThemeProvider>
             <main>
                 <div className="hero-container">
+
                     <div id="header">
                         <div id="logo">BibleProject</div>
                         <ThemeToggle />
                     </div>
+
                     <div id="hero-content">
                         {videoCategory && <CategoryContainer {...videoCategory} />}
                         <div className="right-column-container">
@@ -83,15 +85,20 @@ export const App = () => {
                         </div>
                     </div>
                 </div>
-                <div id="video-list-container">
-                    {videos?.map((video) => (
-                        <VideoCard
-                            key={video.id}
-                            onVideoCardClick={onVideoCardClick}
-                            {...video}
-                        />
-                    ))}
+
+
+                <div className="list-container">
+                    <div id="video-list-container">
+                        {videos?.map((video) => (
+                            <VideoCard
+                                key={video.id}
+                                onVideoCardClick={onVideoCardClick}
+                                {...video}
+                            />
+                        ))}
+                    </div>
                 </div>
+
                 {error?.message && (
                     <div className="error-container">
                         <ErrorMessage
