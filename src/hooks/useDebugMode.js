@@ -5,7 +5,6 @@ const useDebugMode = () => {
 
     useEffect(() => {
         const queryParams = new URLSearchParams(window.location.search);
-        console.log({ queryParams: queryParams.entries() });
 
         const paramsObj = {};
         for (const [key, value] of queryParams.entries()) {

@@ -5,6 +5,7 @@
     --black: #000;
     --background-color: var(--white);
     --text-color: var(--black);
+    --error-background: #CE1A2B;
     --dark-mode-bg-color: #15202b;
     --dark-mode-secondary-bg-color: #22303C;
     --secondary-text-color: #575656fe;
@@ -232,6 +233,68 @@ main {
             @media (width < 768px) {
                 font-size: small;
             }
+        }
+    }
+}
+
+.error-container {
+    position: relative;
+}
+
+@keyframes slide {
+    0% {
+        right: -350px;
+    }
+
+    60% {
+        right: 50px;
+    }
+
+    100% {
+        right: 15px;
+    }
+}
+
+.toast.error {
+    position: fixed;
+    border-radius: var(--main-border-radius);
+    background: var(--error-background);
+    color: white;
+    display: flex;
+    font-size: small;
+    padding: 15px;
+    width: 300px;
+    top: 15px;
+    right: 15px;
+
+    animation-name: slide;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+
+    @media (width < 768px) {
+        width: 85%;
+        font-size: medium;
+        padding: 25px 15px;
+    }
+
+    .toast-body {
+        flex-basis: 95%;
+    }
+
+    .toast-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        flex-basis: 5%;
+        font-size: large;
+        background: inherit;
+        color: var(--white);
+        border: none;
+        align-self: flex-start;
+
+        @media (width < 768px) {
+            top: 30%;
+            font-size: x-large;
         }
     }
 }
